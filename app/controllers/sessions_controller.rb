@@ -3,10 +3,10 @@ class SessionsController < ApplicationController
     def new
     end
   
-    def create
+    def create       
       if params[:name].present?
         session[:name] = params[:name]
-        redirect_to '/'
+        redirect_to '/secrets'
       else
         redirect_to :login
       end

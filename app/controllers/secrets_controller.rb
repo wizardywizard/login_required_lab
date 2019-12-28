@@ -2,10 +2,11 @@ class SecretsController < ApplicationController
     before_action :require_login
   
     def show
-    end
-  
+        @hello = "hello"
+    end   
+
     private
-    def require_login
-        return head(:forbidden) unless session.include? :user_id
-    end
+  def require_login   
+      redirect_to "/login" unless session.include? :name
+  end
   end
